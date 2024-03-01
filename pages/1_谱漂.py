@@ -53,6 +53,8 @@ with chart3:
         result.to_excel(excel_data, index=False)
         excel_data.seek(0)
         st.download_button("谱漂数据下载", excel_data, file_name='after_data.xlsx')
+    else:
+        result = None
 with container3:
     channel3 = st.number_input("channel:", key="channel3", min_value=1, max_value=256, value=None, step=1, format="%d")
     value1 = tls.get_counts(result, channel3, col1='Channels', col2='Counts_origin')
